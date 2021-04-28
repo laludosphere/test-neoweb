@@ -12,7 +12,6 @@
   </header>
   <div class="content">
     <h1>Les restaurants</h1>
-    <%= link_to 'Add new Restaurant', new_restaurant_path() %>
     <% @restaurants.each do |restaurant| %>
       <h2><%= restaurant.name %></h2>
       <p><%= restaurant.address %></p>
