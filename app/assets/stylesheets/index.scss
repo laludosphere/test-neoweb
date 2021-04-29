@@ -1,0 +1,38 @@
+.content {
+  background: var(--divider);
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  .restaurants-container {
+    max-width: 80rem;
+    width: 100%;
+    margin: 5rem 0 10rem 0;
+    .restaurant {
+      box-shadow: var(--box-shadow);
+      background: white;
+      padding: 0 5rem;
+      border-radius: 3px;
+      // display: flex;
+      // flex-direction: column;
+      // align-items: center;
+    }
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 0;
+    }
+    .address-container {
+      max-width: 550px;
+    }
+    .restaurant-actions {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 2rem 0;
+      margin-top: 2rem;
+      border-top: 1px solid var(--divider);
+      .btn {
+        margin-left: 1rem;
+      }
+    }
+  }
+}

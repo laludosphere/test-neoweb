@@ -4,6 +4,7 @@
 @import "media-queries";
 @import "utils";
 @import "base";
+@import "form";
 
 .container {
   min-height: 100vh;
@@ -48,6 +49,7 @@ header {
 .content {
   grid-area: content;
   padding: 20px;
+  background: var(--divider);
 }
 
 footer {
