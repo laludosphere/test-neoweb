@@ -1,0 +1,18 @@
+<h1>Planning</h1>
+<%= simple_form_for([@restaurant,@timeslot]) do |f| %>
+  <%= f.input :day, collection:
+  [ 'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday'],
+    include_blank: false, label: 'Day'  %>
+
+  <%= f.time_field :start_hour %>
+  <%= f.time_field :end_hour, label: 'End' %>
+  <%= f.time_field :start_hour, label: 'Start' %>
+  <%= f.time_field :end_hour, label: 'End' %>
+  <%= f.submit "Sub Time for restaurant" %>
+<% end %>

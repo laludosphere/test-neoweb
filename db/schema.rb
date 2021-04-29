@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_28_141316) do
+ActiveRecord::Schema.define(version: 2021_04_29_100540) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
@@ -19,4 +19,15 @@ ActiveRecord::Schema.define(version: 2021_04_28_141316) do
     t.string "address"
   end
 
+  create_table "timeslots", force: :cascade do |t|
+    t.string "day"
+    t.date "start_hour"
+    t.date "end_hour"
+    t.integer "restaurant_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["restaurant_id"], name: "index_timeslots_on_restaurant_id"
+  end
+
+  add_foreign_key "timeslots", "restaurants"
 end

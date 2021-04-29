@@ -1,4 +1,16 @@
 <h1><%= @restaurant.name %></h1>
 <p><%= @restaurant.address %></p>
 
+  <ul>
+    <% @restaurant.timeslots.each do |timeslot| %>
+    <li><%= timeslot.day %>
+        <%= link_to "❌",
+                  timeslot_path(timeslot),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+    </li>
+    <% end %>
+  </ul>
+
+<%= link_to "Leave timeslot", new_restaurant_timeslot_path(@restaurant) %>
 <%= link_to "Back to list", restaurants_path %>
