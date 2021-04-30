@@ -15,20 +15,23 @@
       <div class="restaurant">
         <h2><%= @restaurant.name %></h2>
         <p class="address-container"><%= @restaurant.address %></p>
-          <div class="restaurant-actions">
-            <%= link_to "Leave timeslot", new_restaurant_timeslot_path(@restaurant), class:"btn btn-primary" %>
-            <%= link_to "Back to list", restaurants_path(), class:'btn btn-danger' %>
+        <% @restaurant.timeslots.each do |timeslot| %>
+          <div class="time-zone">
+              <%= timeslot.day %>
+              <%= timeslot.morning_start_hour.strftime("%k:%M") %> - <%= timeslot.morning_end_hour.strftime("%k:%M") %> /
+              <%= timeslot.afternoon_start_hour.strftime("%k:%M") %> - <%= timeslot.afternoon_end_hour.strftime("%k:%M") %>
+              <%= link_to "❌",
+                          timeslot_path(timeslot),
+                          method: :delete,
+                          data: { confirm: "Are you sure?" } %>
           </div>
+        <% end %>
+        <div class="restaurant-actions">
+          <%= link_to "Leave timeslot", new_restaurant_timeslot_path(@restaurant), class:"btn btn-primary" %>
+          <%= link_to "Back to list", restaurants_path(), class:'btn btn-danger' %>
+        </div>
       </div>
     </div>
   </div>
   <footer>© test-neoweb</footer>
 </div>
-
-<% @restaurant.timeslots.each do |timeslot| %>
-              <%= timeslot.day %>
-              <%= link_to "❌",
-                          timeslot_path(timeslot),
-                          method: :delete,
-                          data: { confirm: "Are you sure?" } %>
-<% end %>

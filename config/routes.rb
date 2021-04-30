@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # Destroy a restaurant
   #Routing for time slot new and create
   # shallow nesting for destroy
-
+  root to: 'restaurants#index'
   resources :restaurants do
     resources :timeslots, only: [:new, :create]
   end

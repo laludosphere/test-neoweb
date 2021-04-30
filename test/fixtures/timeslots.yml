@@ -2,12 +2,16 @@
 
 one:
   day: MyString
-  start_hour: 2021-04-29
-  end_hour: 2021-04-29
+  morning_start_hour: 2021-04-30 13:29:39
+  morning_end_hour: 2021-04-30 13:29:39
+  afternoon_start_hour: 2021-04-30 13:29:39
+  afternoon_end_hour: 2021-04-30 13:29:39
   restaurant: one
 
 two:
   day: MyString
-  start_hour: 2021-04-29
-  end_hour: 2021-04-29
+  morning_start_hour: 2021-04-30 13:29:39
+  morning_end_hour: 2021-04-30 13:29:39
+  afternoon_start_hour: 2021-04-30 13:29:39
+  afternoon_end_hour: 2021-04-30 13:29:39
   restaurant: two

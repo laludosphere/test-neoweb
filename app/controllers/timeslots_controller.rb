@@ -27,6 +27,11 @@ class TimeslotsController < ApplicationController
   private
 
   def timeslot_params
-    params.require(:timeslot).permit(:day, :start_hour, :end_hour, :restaurant_id)
+    params.require(:timeslot).permit(:day,
+    :morning_start_hour,
+    :morning_end_hour,
+    :afternoon_start_hour,
+    :afternoon_end_hour,
+    :restaurant_id)
   end
 end

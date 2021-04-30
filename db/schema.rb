@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_29_100540) do
+ActiveRecord::Schema.define(version: 2021_04_30_112939) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 2021_04_29_100540) do
 
   create_table "timeslots", force: :cascade do |t|
     t.string "day"
-    t.date "start_hour"
-    t.date "end_hour"
+    t.datetime "morning_start_hour"
+    t.datetime "morning_end_hour"
+    t.datetime "afternoon_start_hour"
+    t.datetime "afternoon_end_hour"
     t.integer "restaurant_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
